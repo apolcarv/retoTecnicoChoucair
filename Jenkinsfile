@@ -31,31 +31,7 @@ pipeline {
                   }
                   echo "El resultado de la prueba segunda ejecución es : '${currentBuild.result}'";
                 }
-                break
-            case "any":
-              catchError {
-                dir("${workspace}/${NOMBRE_PROYECTO}") {
-                  script {
-                    try {
-                      bat "gradlew clean ${PROXY}";
-                      bat "gradlew test -DTiporegresion=\"@FUNCIONALFRONT\" -Dfile.encoding=UTF-8 ${PROXY}";
-                      currentBuild.result = 'SUCCESS'
-                    } catch(err) {
-                      echo "La ejecución de la prueba requiere que algunos escenarios se vuelvan a ejecutar";
-                    }
-
-                    try {
-                      bat "gradlew test -DTiporegresion=\"@PREPARACIONRERUN\" -Dfile.encoding=UTF-8 ${PROXY}";
-                      bat "gradlew test -DTiporegresion=\"@RERUNFUN\" -Dfile.encoding=UTF-8 ${PROXY}";
-                      currentBuild.result = 'SUCCESS'
-                    } catch(error) {
-                      currentBuild.result = 'FAILURE'
-                    }
-                    echo "El resultado de la prueba segunda ejecución es : '${currentBuild.result}'";
-                  }
-
-                }
-              }
+         
             }
 
         }
