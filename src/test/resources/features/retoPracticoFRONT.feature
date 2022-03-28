@@ -16,4 +16,13 @@
         | ESCENARIO                  | FUNCIONALIDAD                              |
         | 001- RETO_TECNICO_CHOUCAIR | AUTENTICACION_Y_CREACION_UNIDAD_DE_NEGOCIO |
 
+    @StarSharp_PASO_(b)
+    Scenario Outline: 002- Programar reunion
+      Given usuario se autentica en el aplicativo StarSharp "<ESCENARIO>" "<FUNCIONALIDAD>"
+      When realiza programacion de una nueva reunion
+      Then guarda y valida que se haya creado con exito la reunion
+      Examples:
+        | ESCENARIO                  | FUNCIONALIDAD                              |
+        | 002- RETO_TECNICO_CHOUCAIR | CREACION_DE_REUNIONES |
+
 

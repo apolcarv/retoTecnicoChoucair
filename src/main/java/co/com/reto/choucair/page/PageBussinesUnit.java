@@ -35,7 +35,7 @@ public class PageBussinesUnit {
     @CacheLookup
     private WebElement button_select_parent_unit;
 
-    @FindBy(how = How.XPATH, using = "slick-cell l1 r1")
+    @FindBy(how = How.XPATH, using = "//*[@class='slick-cell l1 r1']")
     @CacheLookup
     private List<WebElement> listSelect;
 
@@ -75,5 +75,6 @@ public class PageBussinesUnit {
             .located(By.xpath("//*[@class='tool-button save-and-close-button icon-tool-button']"));
 
     public static final Target VALID_BUSINESS_UNIT = Target.the("valida que se encuentre la unidad de negocio que fue creada anteriormente")
-            .located(By.xpath("//*[@class='slick-cell l1 r1']"));
+            .located(By.xpath("//a[contains(.,'Test01')]"));
+
 }

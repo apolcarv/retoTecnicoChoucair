@@ -51,6 +51,14 @@ public class PageHome {
     public static final Target ITEM_PRO_FEATURES_BTN = Target.the("clic boton organizacion")
             .located(By.xpath("//span[contains(.,'Organization')]"));
 
-    public static final Target SELECT_PRO_FEATURES_BTN = Target.the("clic boton unidades de negocios")
+    public static final Target SELECT_PRO_FEATURES_BTN = Target.the("seleccionar botom unidades de negocios")
             .located(By.xpath("//span[contains(.,'Business Units')]"));
+
+    public static final Target ITEM_PRO_MEETING_BTN = Target.the("clic boton reuniones")
+            .located(By.xpath("//span[contains(.,'Meeting')]"));
+
+    public static final Target SELECT_ITEM_PRO_MEETING_BTN = Target.the("seleccionar boton reuniones")
+            .located(By.xpath("//*[@id='nav_menu1_3_2']/li[1]/a/span"));
+
+
 }

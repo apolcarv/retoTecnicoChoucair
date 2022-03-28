@@ -52,13 +52,30 @@ public class RetoTecnicoFRONT {
     @Then("^guarda y valida que se haya creado con exito$")
     public void guarda_y_valida_que_se_haya_creado_con_exito()   {
         businessControllerWeb.guardaUnidadDeNegocio();
+        businessControllerWeb.validarRegistroUnidadDeNegocio();
         businessControllerWeb.obtenerInformacionDeTodaslasUnidadesDeNegocio();
     }
+
+    @When("realiza programacion de una nueva reunion")
+    public void realiza_programacion_de_una_nueva_reunion() {
+        businessControllerWeb.ingresaAlMenuReuniones();
+        businessControllerWeb.programarReunion();
+
+
+    }
+    @Then("guarda y valida que se haya creado con exito la reunion")
+    public void guarda_y_valida_que_se_haya_creado_con_exito_la_reunion() {
+        businessControllerWeb.guardaReunion();
+    }
+
+
+
 
     @After
     public void finalizar() {
         businessControllerWeb.cerraBrowser();
 
     }
+
 
 }

@@ -102,14 +102,14 @@ test
                     break
                 case "@PREPARACIONRERUN":
                     useJUnit()
-                    include('**/TestRunnerRetoPracticoFRONT*')
+                    include('**/TestRunnerPreparacionEscenarioFallidos*')
                     maxParallelForks = 1
                     reports.junitXml.setEnabled(false)
                     reports.html.setEnabled(false)
                     break
                 case "@RERUNFUN":
                     useJUnit()
-                    include('**/TestRunnerRetoPracticoFRONT*')
+                    include('**/TestRunnerEscenariosFallidosFRONT*')
                     maxParallelForks = 1
                     reports.junitXml.setEnabled(false)
                     reports.html.setEnabled(false)
